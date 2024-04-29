@@ -12,6 +12,12 @@ variable "sso_users" {
   default     = {}
 }
 
+variable "create_sso_users" {
+  description = "Should this module create users in IAM Identity Centers"
+  type        = bool
+  default     = false
+}
+
 # Permission Sets
 variable "permission_sets" {
   description = "Map of maps containing Permission Set names as keys. See permission_sets description in README for information about map values."

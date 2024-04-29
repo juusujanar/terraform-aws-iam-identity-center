@@ -14,6 +14,8 @@ locals {
     for s in local.flatten_user_data : format("%s_%s", s.user_name, s.group_name) => s
   }
 
+  create_users = var.create_sso_users ? var.sso_users : {}
+
 }
 
 

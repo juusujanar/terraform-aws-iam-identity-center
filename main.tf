@@ -9,7 +9,7 @@ resource "aws_identitystore_group" "sso_groups" {
 
 # - IAM Identity Center Dynamic User Creation -
 resource "aws_identitystore_user" "sso_users" {
-  for_each          = var.sso_users == null ? {} : var.sso_users
+  for_each          = local.create_users
   identity_store_id = local.sso_instance_id
 
   # -- PROFILE DETAILS --
